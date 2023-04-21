@@ -10,6 +10,27 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=16435049&auto=1&height=66"></iframe>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28892408&auto=1&height=66"></iframe>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=484056997&auto=1&height=32"></iframe>
+/****************
+*
+* 发起添加群流程。群号：anzhuo分享群（有一些病(771241607) 的 key 为： H9LvZdEQlEYl2OQralao_6B3swxxI95e
+* 调用 joinQQGroup(H9LvZdEQlEYl2OQralao_6B3swxxI95e) 即可发起手Q客户端申请加群 anzhuo分享群（有一些病(771241607)
+*
+* @param key 由官网生成的key
+* @return 返回true表示呼起手Q成功，返回false表示呼起失败
+******************/
+public boolean joinQQGroup(String key) {
+    Intent intent = new Intent();
+    intent.setData(Uri.parse("mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26jump_from%3Dwebapi%26k%3D" + key));
+   // 此Flag可根据具体产品需要自定义，如设置，则在加群界面按返回，返回手Q主界面，不设置，按返回会返回到呼起产品界面    //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    try {
+        startActivity(intent);
+        return true;
+    } catch (Exception e) {
+        // 未安装手Q或安装的版本不支持
+        return false;
+    }
+}
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=uavhNBkDn1NFM4WrGACAppPOeQoEusfr&jump_from=webapi&authKey=IHzO2eJKp5bViOO9Oak1uus6gKgHIAMSQVFCgHMnz0s0NcreYPLYSk6W8e7k/Uzs"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Lis Lite 浏览器（笑死没" title="Lis Lite 浏览器（笑死没"></a>
 /*--预设--*/ 
 body { padding:0px;margin: 0px; } 
 #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
