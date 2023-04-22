@@ -1,0 +1,878 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#header{
+    height: 210px;
+    background: white;
+}
+
+#header .header_top{
+    height: 36px;
+    background:#f5f5f5;
+}
+
+#header .header_top_center{
+    width: 1200px;
+    height: 36px;
+    margin: 0 auto;
+    line-height: 36px;
+}
+#header .header_top_center .h_top_left{
+    color: gray;
+    font-size: 13px;
+    float: left;
+    height: 36px;
+}
+#header .header_top_center .h_top_right{
+    color: gray;
+    font-size: 13px;
+    float: right;
+    height: 36px;
+}
+#header .header_top_center.h_top_right a{
+    color: #6c6c6c;
+    margin: 0 5px;
+    font-size: 13px;
+}
+
+#header .header_center{
+    height: 124px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#header .header_center .h_c_logo{
+    width: 190px;
+    height: 124px;
+    float: left;
+}
+
+#header .header_center .h_c_search{
+    width: 815px;
+    height: 124px;
+    float: left;
+}
+
+#header .header_center .h_c_code{
+    width: 190px;
+    height: 124px;
+    float: left;
+}
+
+#header .h_c_logo img{
+    width: 200px;
+    height:120px;
+    margin-top:4px ;
+}
+
+#header .h_c_search form{
+    width: 650px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+#header .h_c_search form .t_input{
+    width: 555px;
+    height: 40px;
+    border: 2px solid black;
+    padding-left: 10px;
+}
+
+#header .h_c_search form .t_button{
+    width: 75px;
+    height: 40px;
+    border: 1px solid gray;
+    float: right;
+    color: orange;
+    margin-left: 5px;
+
+
+}
+#header .h_c_search .hot{
+    margin-left: 80px;
+    margin-top: 5px;
+}
+#header .h_c_search .hot a{
+    color: #6c6c6c;
+    font-size: 15px;
+}
+
+#header .h_c_search .hot a:hover{
+    color: orangered;
+}
+
+#header .h_c_code img{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 140px;
+    height: 110px;
+}
+#header .nav{
+    width: 1200px;
+    height: 44px;
+    margin: 0 auto;
+    background: darkslategrey;
+    line-height: 44px;
+    border-radius:8px 8px 8px 8px ;
+}
+#header .nav ul{
+    list-style: none;
+    width: 1200px;
+    height: 44px;
+    display: flex;
+}
+#header .nav ul li{
+    flex: 1;
+    text-align: center;
+}
+
+#header .nav ul li a{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+#header .nav ul li a:hover{
+    font-size: 25px;
+}
+#footer{
+    text-align: center;
+    height: 300px;
+    padding-top: 30px;
+}
+#footer .copyright{
+    margin-top: 20px;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="shortcut icon" href="images/camera.ico">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<!--头部-->
+<div id="header">
+    <!--头部中间信息-->
+    <div class="h_center">
+        <img src="images/logo.png" alt="">
+        <p>欢迎来到未命名图库：请先登录！</p>
+    </div>
+</div>
+
+
+<!--中部-->
+<div id="login_body">
+    <div class="login_b_center">
+        <div class="login_bg">
+            <h1>密码登录</h1>
+            <form action="#" id="login">
+<!--                //用户名-->
+                <div class="userName">
+                    <span></span><input type="text">
+                </div>
+<!--                //密码-->
+                <div class="password">
+                    <span></span><input type="password">
+                </div>
+<!--                //登录按钮-->
+                <div class="login_btn">
+                    <a href="index.html">
+                         <input type="button" value="登录">
+                    </a>
+                </div>
+                <div class="forgot_password">
+                    <a href="">忘记密码</a>
+                    <a href="regist.html">注册账号</a>
+                    <a href="1.0/index.html">帮助</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    <div class="copyright">
+        Copyright  2018 - 2023 anzhuo
+    </div>
+</div>
+</body>
+</html>
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#header{
+    height: 88px;
+    border: 1px solid;
+}
+
+#header .h_center{
+    width: 1200px;
+    height: 88px;
+
+    margin: 0 auto;
+}
+#header .h_center img{
+    float: left;
+    height: 80px;
+    width: 120px;
+    margin-top: 5px;
+}
+#header .h_center p{
+    float: left;
+    text-align: center;
+    width: 880px;
+    font-size: 10px;
+    border: 1px solid yellow;
+    margin-top: 20px;
+    margin-left: 80px;
+    color: blue;
+    background: pink;
+    padding: 3px;
+}
+
+#login_body{
+    height: 600px;
+    background-image: url("../images/night.jpg");
+    background-position: center;
+    background-size: 1000px 600px;
+}
+#login_body .login_b_center{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+#login_body .login_bg{
+    width: 350px;
+    height: 351px;
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    right: -10px;
+    top: 80px;
+    padding: 30px;
+
+}
+#login div{
+    height: 40px;
+    margin-top: 20px;
+}
+#login span{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background: red;
+    float: left;
+    border: 1px gray;
+}
+#login .userName span{
+    background-image: url("../images/商城素材/userName_Icon.png");
+}
+#login .password span{
+    background-image: url("../images/商城素材/password_Icon.png");
+}
+
+#login input{
+    width: 250px;
+    height: 40px;
+    float: left;
+}
+#login .login_btn input{
+    background-color: coral;
+    width: 300px;
+    border: none;
+    color: whitesmoke;
+    float: left;
+
+}
+#login .login_btn a:hover{
+    color: blue;
+    float: left;
+
+}
+#login .forgot_password{
+    text-align: right;
+    margin-top: 20px;
+}
+a{
+    text-decoration:none;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="css/regist.css">
+    <link rel="shortcut icon" href="images/camera.ico">
+</head>
+<body>
+<!--头部-->
+<div id="reg_header">
+    <div class="reg_h_center">
+        <div class="reg_h_left">
+            <img src="images/logo.png" alt="">
+            <h3>欢迎注册</h3>
+        </div>
+    </div>
+</div>
+
+
+<!--表单内容-->
+<div class="reg_back">
+    <div class="reg_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+    </div>
+    <div class="reg_center">
+        <div class="reg_form">
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td class="td_left"><label for="username">用户名</label></td>
+                        <td class="td_right"><input type="text" name="username" placeholder="请输入用户名"
+                                                    id="username"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="password">密码</label></td>
+                        <td class="td_right"><input type="password" name="password" placeholder="请输入密码"
+                                                    id="password"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="Email">Email</label></td>
+                        <td class="td_right"><input type="email" name="email" placeholder="请输入Email" id="Email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="rename">姓名</label></td>
+                        <td class="td_right"><input type="text" name="rename" placeholder="请输入真实姓名" id="rename">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="Telphone">手机号</label></td>
+                        <td class="td_right"><input type="text" name="telphone" placeholder="请输入您的手机号"
+                                                    id="Telphone"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label>性别</label></td>
+                        <td class="td_right"><input type="radio" name="gender" value="male" checked> 男
+                            <input type="radio" name="gender" value="female"> 女
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="Birthday">出生日期</label></td>
+                        <td class="td_right"><input type="date" name="birthday" id="Birthday"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="checkcode">验证码</label></td>
+                        <td class="td_right"><input type="text" name="checkcode" id="checkcode">
+                            <img src="images/商城素材/check_code.png" id="img_check"></td>
+                        <!-- 10.png为验证码图片 -->
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" value="注册" id="btn_sub"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="reg_right">
+        <p>已有账号?<a href="login.html">立即登录</a></p>
+    </div>
+</div>
+</body>
+</html>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#reg_header{
+    height: 110px;
+    width: 100%;
+    box-shadow: 0px 0px 10px orange;
+}
+
+#reg_header .reg_h_center{
+    width: 1200px;
+    height: 110px;
+    margin: 0 auto;
+    display: flex;
+}
+#reg_header .reg_h_left{
+     height: 110px;
+     flex: 1;
+ }
+
+#reg_header .reg_h_left img{
+    height: 100px;
+    width: 120px;
+    float: left;
+}
+#reg_header .reg_h_left h3{
+    float: left;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+#reg_header .reg_h_right{
+    height: 110px;
+    flex: 1;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+
+.reg_back {
+    /*设置整体的尺寸、背景色、边距等*/
+    width: 850px;
+    height: 400px;
+    border: 8px solid #eeeeee;
+    background: white;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.reg_left {
+    /*设置左浮动和外边距*/
+    float: left;
+    margin: 10px;
+}
+
+.reg_left > p:first-child {
+    /*设置段落（新用户注册）颜色和字体大小*/
+    color: gray;
+    font-size: 20px;
+}
+
+.reg_left > p:last-child {
+    /*设置段落（USER REGISTER）颜色和字体大小*/
+    color: #A6A6A6;
+    font-size: 20px;
+}
+
+.reg_center {
+    /*设置中间的各种输入框等*/
+    float: left;
+    width: 450px;
+}
+
+.reg_right {
+    /*设置右边段落浮动和外间距*/
+    float: right;
+    margin: 30px;
+}
+
+.reg_right > p:first-child {
+    font-size: 15px;
+}
+
+.reg_right p a {
+    /*设置超链接（立即登录）颜色*/
+    color: crimson;
+}
+
+.td_left {
+    /*设置表单中字体对齐方式和宽度、高度*/
+    width: 100px;
+    text-align: right;
+    height: 40px;
+}
+
+.td_right {
+    /*设置输入框内边距*/
+    padding-left: 40px;
+}
+
+#username ,#password,#Email, #rename ,#Telphone,#Birthday,#checkcode{
+    /*设置输入框大小和边框*/
+    width: 200px;
+    height: 30px;
+    border: 1px solid #A4A4A4;
+    /* 设置边框为圆角 */
+    border-radius: 8px;
+    padding-left: 10px;
+}
+#checkcode{
+    /*验证码宽度*/
+    width: 100px;
+}
+#img_check{
+    /*验证码图片*/
+    vertical-align: middle;
+    height: 30px;
+    width: 95px;
+}
+#btn_sub{
+    /*注册按钮*/
+    margin-left: 50px;
+    background: orangered;
+    color: whitesmoke;
+    width: 150px;
+    height: 40px;
+    border: 1px solid gray ;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>未命名图库-首页</title>
+<!--    设置标签图标-->
+    <link rel="shortcut icon" href="images/camera.ico">
+    <link rel="stylesheet" href="css/index1.1.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/goods_list.css">
+    <link rel="stylesheet" href="css/next_page.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/photo.js"></script>
+    <script>
+        $(document).ready(function function_name() {
+            changeImg()
+        })
+    </script>
+</head>
+<body>
+
+<!--头部-->
+<div id="header">
+    <!--顶部 登录-->
+    <div class="header_top">
+        <!-- 中部 -->
+        <div class="header_top_center">
+            <!-- 中部左侧 -->
+            <div class="h_top_left">
+                欢迎来到未命名图库
+            </div>
+            <!-- 中部右侧-->
+            <div class="h_top_right">
+                <a href="login.html">登录</a>
+                <a href="regist.html">免费注册</a>
+                <a href="#">购物车</a>
+                <a href="#">我的订单</a>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- 中部搜索-->
+    <div class="header_center">
+<!--        中部左边logo-->
+        <div class="h_c_logo">
+            <img src="images/logo.png" alt="">
+        </div>
+        <div class="h_c_search">
+            <form action="#">
+                <input type="text" placeholder="请输入..." class="t_input">
+                <input type="submit" class="t_button" value="搜索">
+            </form>
+
+            <div class="hot">
+                <a href="#">山川</a>
+                <a href="#">沙漠</a>
+                <a href="#">星空</a>
+                <a href="#">静物</a>
+            </div>
+
+        </div>
+<!--        中部右边二维码-->
+        <div class="h_c_code">
+            <img src="images/code.jpg" alt="">
+        </div>
+    </div>
+    <!--底部导航        -->
+    <div class="nav">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">最新图片</a></li>
+            <li><a href="#">最热图片</a></li>
+            <li><a href="#">山川湖海</a></li>
+            <li><a href="#">大漠孤烟</a></li>
+            <li><a href="#">人像精选</a></li>
+        </ul>
+    </div>
+</div>
+<!--banner-->
+<div id="ad" style="text-align: center;">
+    <ul id="ad_img" >
+        <li><img src="images/banner/1.jpg" width="1100" height="600" /></li>
+        <li><img src="images/banner/2.jpg" width="1100" height="600" /></li>
+        <li><img src="images/banner/3.jpg" width="1100" height="600" /></li>
+        <li><img src="images/banner/4.jpg" width="1100" height="600" /></li>
+        <li><img src="images/banner/5.jpg" width="1100" height="600" /></li>
+    </ul>
+
+    <ul id="ad_num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <!--<li>6</li>-->
+    </ul>
+</div>
+
+
+<!--精选图片-->
+<div id="ms">
+    <div class="ms_top">
+        <span>精选图片</span>
+        <span>总有一副让你怦然心动</span>
+    </div>
+    <div class="ms_body">
+        <div class="ms_body_left">
+            <ul>
+
+                <li>
+                    <a href="">
+                        <img src="images/gallery/01.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/02.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/03.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/04.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <img src="images/gallery/05.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="ms_body_center">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/06.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/07.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/08.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/09.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/10.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="ms_body_right">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/11.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+
+
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/12.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/13.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/14.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/gallery/15.jpg" alt="">
+                        <p class="name">一个好听的名字</p>
+                        <div class="photoby">
+                            <img src="images/camera.jpg " width="10" height="10" alt=""/>
+                            <p>lzh</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!--翻页按钮-->
+<div class="page-icon">
+    <span class="page-disabled"><i></i>上一页</span>
+    <span class="page-current">1</span>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    ……
+    <a href="#">...</a>
+    <a href="#">10</a>
+    <a class="page-next" href="#">下一页<i></i></a>
+</div>
+<!--尾部-->
+<div id="footer">
+    <div class="link">
+        <a href="">关于我们</a>
+        |
+        <a href="">联系我们</a>
+        |
+        <a href="">商家入驻</a>
+        |
+        <a href="">友情链接</a>
+        |
+    </div>
+    <div class="copyright">
+        Copyright © 1999 - 2020 LZH. All Rights Reserved.
+    </div>
+</div>
+</body>
+</html>
+
+function changeImg() {
+    /*获取图片和索引的数组*/
+    var $imgs = $("#ad_img li");
+    var $nums = $("#ad_num li");
+
+    var isStop = false;
+    var index = 0;
+
+    $nums.eq(index).addClass("numsover").siblings().removeClass("numsover");
+    $imgs.eq(index).show();
+
+    /*鼠标悬停在数字上的事件*/
+    $nums.mouseover(function() {
+        isStop = true;
+        /*先把数字的背景改了*/
+        $(this).addClass("numsover").siblings().removeClass("numsover");
+
+        /*图片的索引和数字的索引是对应的，所以获取当前的数字的索引就可以获得图片，从而对图片进行操作*/
+        index = $nums.index(this);
+        $imgs.eq(index).show("slow");
+        $imgs.eq(index).siblings().hide("slow");
+    }).mouseout(function() {
+        isStop = false
+    });
+    /*设置循环*/
+    setInterval(function() {
+        if(isStop) return;
+        if(index >= 5) index = -1;
+        index++;
+        $nums.eq(index).addClass("numsover").siblings().removeClass("numsover");
+        $imgs.eq(index).show("slow").siblings().hide("slow");
+
+    }, 3000);
+
+}
+
