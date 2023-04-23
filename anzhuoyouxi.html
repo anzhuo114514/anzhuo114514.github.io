@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		#game {
+			width: 800px;
+			height: 600px;
+			background: url(imgs/sky.png);  
+			/*？*/
+			position: relative;
+			overflow: hidden;
+		}
+		#bird {
+			height: 25px;
+			width: 34px;
+			background: url(imgs/birds.png) -8px -10px no-repeat;
+			/*子绝父相*/
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+		#pp{
+			text-align: center;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="game">
+		<div id="bird"></div>
+	</div>
+<p id="pp"></p>
+ <input type="button" name="" value="重新开始" id="btn">
+ 	<script>
+		/*
+			1.让小鸟飞起来
+				1.1背景移动 
+					用到循环定时器 
+		*/
+		//获取相应的元素
+		var game = document.getElementById('game');
+		var birdEl = document.getElementById('bird');
+   var pp = document.getElementById('pp');
+   var cc = 0;
+var btn = document.getElementById('btn');
+         btn.onclick = function() {
+         	history.go(0);
+         }
+		//小鸟的多个属性用对象来接受
+		var bird = {
+			speedX: 0,
+			speedY: 0,
+			x: birdEl.offsetLeft,
+			y: birdEl.offsetTop,
+			a:0
+		};
+		//背景图片初始化
+		var sky = {
+			x: 0
+		}
+
+		//定义状态值
+		var running = true;
+		setInterval(function() {
+			if (running) {
+				//使背景动起来
+				sky.x -= 5;  //sky.x = sky.x -5;
+				game.style.backgroundPositionX = sky.x + 'px';
+
+				//使小鸟飞起来   距离 = 时间 * 速度         
+				bird.speedY += 0.5;
+				bird.a += 2;
+				bird.y += bird.speedY   // y = y + speedY
+				cc = Math.floor((cc+bird.a)/100);
+				if (bird.y + birdEl.offsetHeight > 600) {
+					running = false;
+					bird.y = 600 - birdEl.offsetHeight;	               
+				}
+				if (bird.y < 0) {
+					running = false;
+					bird.y = 0;
+				}
+				birdEl.style.top = bird.y + 'px';
+              pp.innerHTML = '分数:'+cc;
+			}
+		},20)
+
+		//点击文档的时候实现向上运动
+		document.onclick = function() {
+			bird.speedY = -10;
+		}
+
+
+		//创建管道
+		function createPipe(position) {
+			//管道的属性  位置   高度  宽度 
+			var pipe = {};
+			//管道水平位置
+			pipe.x = position;   //对象属性的定义   对象名.属性名 = 属性值
+			//管道高度   随机的 上管u 下管d
+			pipe.uHeight = parseInt(Math.random() * 100) + 150;
+			var suiji = 150+Math.random() * 200;
+			pipe.dHeight = 600 - suiji - pipe.uHeight;
+			//下管的Top值
+			pipe.dTop = pipe.uHeight + suiji;
+            pipe.a =0;
+			var uPipe = document.createElement('div');
+			//强调    属性值必须是字符串
+			uPipe.style.width = '52px'; 
+			uPipe.style.height = pipe.uHeight + 'px';
+			uPipe.style.background = 'url(imgs/pipe2.png) no-repeat center bottom';
+			uPipe.style.position = 'absolute';
+			uPipe.style.left = pipe.x + 'px';
+			uPipe.style.top = '0px';
+			game.appendChild(uPipe);
+
+			//创建下管道
+			var dPipe = document.createElement('div');
+			dPipe.style.width = '52px';
+			dPipe.style.height = pipe.dHeight + 'px';
+			dPipe.style.background = 'url(imgs/pipe1.png) no-repeat center top';
+			dPipe.style.position = 'absolute';
+			dPipe.style.left = pipe.x + 'px';
+			dPipe.style.top = pipe.dTop + 'px';
+			game.appendChild(dPipe);
+
+			//让管道动起来
+			var gdMove = setInterval(function() {
+				if(running) {
+					pipe.x -= 2;
+					uPipe.style.left = pipe.x + 'px';
+					dPipe.style.left = pipe.x + 'px';
+					//使管子循环
+					if (pipe.x < -52) {
+						createPipe(748);
+						clearInterval(gdMove);
+
+					}
+                  if (cc>6) {
+                  	pipe.x -= 3;
+                  }
+                  if (cc>12) {
+                  	pipe.x -= 4;
+                  }
+                  if (cc>18) {
+                  	pipe.x -= 5;
+                  }
+                  if (cc>24) {
+                  	pipe.x -= 6;
+                  }
+                  if (cc>30) {
+                  	pipe.x -= 7;
+                  }
+					//小鸟不能碰管子
+					var uCheck = bird.x + 34 > pipe.x && bird.x < pipe.x + 52 && bird.y < pipe.uHeight;
+					var dCheck = bird.x + 34 > pipe.x && bird.x < pipe.x + 52 && bird.y > pipe.uHeight + suiji;
+					if (uCheck | dCheck) {
+						running = false;
+					}
+				}
+			},20)
+
+		}
+
+		createPipe(400);
+		createPipe(600);
+		createPipe(800);
+		createPipe(1000);
+
+
+	</script>
+</body>
+</html>
