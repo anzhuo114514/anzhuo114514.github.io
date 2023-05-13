@@ -1,12 +1,3 @@
 {
-  "version": 2,
-  "routes": [{
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/"
-    }
-  ]
+  "trailingSlash": true
 }
