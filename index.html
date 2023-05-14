@@ -378,9 +378,9 @@
     }
 </style>
     <title>等待网站字符出现中</title>
-    <div style="display:none" id="w">anzhuo欢迎您 anzhuo官网 anzhuo博客 anzhuo团队  </div>
-       <div style="display:none" id="m">电脑须知:本网站不可以点右键哦 </div>
-<div style="display:none" id="m"手机须知：您不能属性操作 </div>
+    <div style="display:none" id="w">anzhuo欢迎您  </div>
+       <div style="display:none" id="m">anzhuo公益服欢迎您 </div>
+    <div style="display:none" id="m"anzhuo团队欢迎您 </div>
        <script language="javascript">
 
 var index=0;
@@ -408,21 +408,16 @@ function hh(){
     },300);
 
 }
-setTimeout(hh,2500);
-</script>
-<div class="loadingEight"> 
-   <span></span>
-</div>
-<SCRIPT language="JavaScript">
-function click()
-{
-if(event.button==2)
-{
-alert('不让右键你还右键')
-}
-}
-document.onmousedown=click
-</SCRIPT>
-<body oncopy="alert('禁止复制');return false;">
+
+           <script>
+			//确认框
+			//原理：如果用户单击“确定”，该框返回 true。如果用户单击“取消”，该框返回 false。
+			
+			window.confirm("您好，访问被网站需要经过您的同意，要继续访问吗");//window.confirm()方法可以不带window前缀。
+			//confirm("请选择 确定 & 取消")
+		</script>
+
+			
+
 
 </html>
