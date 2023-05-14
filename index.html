@@ -379,8 +379,8 @@
 </style>
     <title>等待网站字符出现中</title>
     <div style="display:none" id="w">anzhuo欢迎您 anzhuo官网 anzhuo博客 anzhuo团队  </div>
-       <div style="display:none" id="m">电脑须知:本网站不可以点左键和复制文字哦 </div>
-<div style="display:none" id="m"手机须知：您不能属性操作与复制操作 </div>
+       <div style="display:none" id="m">电脑须知:本网站不可以点右键哦 </div>
+<div style="display:none" id="m"手机须知：您不能属性操作 </div>
        <script language="javascript">
 
 var index=0;
@@ -413,5 +413,15 @@ setTimeout(hh,2500);
 <div class="loadingEight"> 
    <span></span>
 </div>
+<SCRIPT language="JavaScript">
+function click()
+{
+if(event.button==2)
+{
+alert('不让右键你还右键')
+}
+}
+document.onmousedown=click
+</SCRIPT>
 
 </html>
