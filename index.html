@@ -383,24 +383,24 @@
     <div style="display:none" id="m"anzhuo团队欢迎您 </div>
        <script language="javascript">
 
-var index=0;
-var inde=0;
-var word=document.getElementById("w").innerHTML;
-var ha=document.getElementById("m").innerHTML;
+   var index=0;
+   var inde=0;
+   var word=document.getElementById("w").innerHTML;
+   var ha=document.getElementById("m").innerHTML;
 
 
-function hh(){
-    var type=setInterval(function(){
-        document.title=word.substring(0,index++);
-        if(index==word.length+1){
-            clearInterval(type);
-            index=0;
-            var ty=setInterval(function(){
-                document.title=ha.substring(0,inde++);
-                if(inde==ha.length+1){    
-                    clearInterval(ty);
-                    inde=0;
-                    hh();
+   function hh(){
+   var type=setInterval(function(){
+   document.title=word.substring(0,index++);
+   if(index==word.length+1){
+    clearInterval(type);
+    index=0;
+    var ty=setInterval(function(){
+    document.title=ha.substring(0,inde++);
+    if(inde==ha.length+1){    
+    clearInterval(ty);
+    inde=0;
+    hh();
                 }
             },300);
             
