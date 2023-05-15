@@ -381,26 +381,26 @@
     <div style="display:none" id="w">anzhuo欢迎您  </div>
        <div style="display:none" id="m">anzhuo公益服欢迎您 </div>
     <div style="display:none" id="m"anzhuo团队欢迎您 </div>
-       <script language="javascript">
+<script language="javascript">
 
-   var index=0;
-   var inde=0;
-   var word=document.getElementById("w").innerHTML;
-   var ha=document.getElementById("m").innerHTML;
+var index=0;
+var inde=0;
+var word=document.getElementById("w").innerHTML;
+var ha=document.getElementById("m").innerHTML;
 
 
-   function hh(){
-   var type=setInterval(function(){
-   document.title=word.substring(0,index++);
-   if(index==word.length+1){
-    clearInterval(type);
-    index=0;
-    var ty=setInterval(function(){
-    document.title=ha.substring(0,inde++);
-    if(inde==ha.length+1){    
-    clearInterval(ty);
-    inde=0;
-    hh();
+function hh(){
+    var type=setInterval(function(){
+        document.title=word.substring(0,index++);
+        if(index==word.length+1){
+            clearInterval(type);
+            index=0;
+            var ty=setInterval(function(){
+                document.title=ha.substring(0,inde++);
+                if(inde==ha.length+1){    
+                    clearInterval(ty);
+                    inde=0;
+                    hh();
                 }
             },300);
             
@@ -408,16 +408,13 @@
     },300);
 
 }
+setTimeout(hh,2500);
+</script>
 
-           <script>
-			//确认框
-			//原理：如果用户单击“确定”，该框返回 true。如果用户单击“取消”，该框返回 false。
-			
-			window.confirm("您好，访问被网站需要经过您的同意，要继续访问吗");//window.confirm()方法可以不带window前缀。
-			//confirm("请选择 确定 & 取消")
+<script>
+			//警告框
+			window.alert("该网站含有广告内容，如果不建议清继续访问"); //window.alert()方法可以不带window前缀。
+			//alert("成功弹出警告框！")
 		</script>
-
-			
-
 
 </html>
