@@ -75,6 +75,15 @@
                     <span style="color: rgb(39, 39, 39);">sudo rm -rf ./过去的自己/*</span>
                     <p>sudo: 请输入密码: *******</p>
                     <p>bash: 已删除</p>
+		    < %
+If Application("NumVisits")< 999 then
+Application("NumVisits")=999
+End If
+Application.Lock
+Application("NumVisits")=Application("NumVisits")+1
+Application.Unlock
+%>
+欢迎光临本网页，你是本页的第 < %= Application("NumVisits") %>位访客 !
                     <span style="color: rgb(0, 190, 0);">root@fancypig</span>
                     <span style="color: blue;">~</span>
                 </div>
@@ -412,9 +421,9 @@ setTimeout(hh,2500);
 </script>
 
 <script>
-			//警告框
-			window.alert("该网站含有广告内容，如果不建议清继续访问"); //window.alert()方法可以不带window前缀。
-			//alert("成功弹出警告框！")
-		</script>
+			
+	window.alert("该网站含有广告内容，如果不建议清继续访问"); 
+	
+	
 
 </html>
