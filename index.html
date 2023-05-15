@@ -76,14 +76,6 @@
                     <p>sudo: 请输入密码: *******</p>
                     <p>bash: 已删除</p>
 		    < %
-If Application("NumVisits")< 999 then
-Application("NumVisits")=999
-End If
-Application.Lock
-Application("NumVisits")=Application("NumVisits")+1
-Application.Unlock
-%>
-欢迎光临本网页，你是本页的第 < %= Application("NumVisits") %>位访客 !
                     <span style="color: rgb(0, 190, 0);">root@fancypig</span>
                     <span style="color: blue;">~</span>
                 </div>
@@ -130,6 +122,63 @@ Application.Unlock
     <script src="https://v1.hitokoto.cn/?encode=js&select=.hito" defer></script>
     <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript">(function getip(selector){var ip="你的 IP: "+returnCitySN["cip"];var ele=document.querySelector(selector);Array.isArray(ele)?ele[0].innerText=ip:ele.innerText=ip;})('.getip')</script>
+</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+
+
+
+strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>无标题文档</title>
+
+<script type="text/javascript"> 
+
+window.onload=counter;
+
+function counter(){
+
+alert(document.cookie);
+
+
+
+if(isNaN(document.cookie.split("=")[1])){
+
+  document.cookie="count=1";
+
+  document.getElementById("count").innerHTML=你是第1位访问者;
+
+}
+
+else{
+
+  var a=parseInt(document.cookie.split("=")[1]);
+
+  alert(document.cookie.split("=")[1]);
+
+  a++;
+
+  document.cookie="count="+a;
+
+  document.getElementById("count").innerHTML="你是第"+a+"位访问者";
+
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+ <div id="count"></div>
+
 </body>
 
 </html>
