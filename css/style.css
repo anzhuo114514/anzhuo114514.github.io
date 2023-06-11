@@ -1,65 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fira+Mono:wght@500&display=swap');
-body{
-    height: 95vh;
-    background: #000000;
-    text-align: center;
-    color: #E0E0E0;
-    font-family: 'Fira Mono', monospace;
-}
-h1{
-    font-size: 2.5rem;
-    font-family: 'Permanent Marker', cursive;
-}
-div{
-    transform-style: preserve-3d;
-}
-svg{
-    width: clamp(300px , 70% , 600px);
-    height: 500px;
-  
-}
-#rocket{
-    
-    transform: translateY(750px);
-   
-    animation: launch 2s ease-out forwards;
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-@keyframes launch {
-    from {
-        transform: translateY(750px);
-    }
-    to{
-        perspective: 500px;
-        transform: translateY(0px); 
-    }
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
 }
-#stars {
-    animation: twinkling 2s linear ;
-}
-@keyframes twinkling {
 
-    from{
-        transform: scale(0);
-    }
-    to{
-        transform: scale(1);
-    }
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
 }
-.text{
-    opacity: 0;
-    animation:appear 1s ease-in forwards;
-    animation-delay: 1.8s;
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
 }
-@keyframes appear {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+
+.content{
+  padding:40px 0;
 }
-a{
-    color:#F66947;
-    text-decoration: none;
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
 }
