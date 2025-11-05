@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub 文件加速</title>
+    <!-- 使用国内CDN加载MDUI资源 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/css/mdui.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        .github-logo {
+            transition: transform 0.3s ease;
+        }
+        .github-logo:hover {
+            transform: scale(1.1);
+        }
+        .example-item {
+            margin: 0.8rem 0;
+            font-family: monospace;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            word-break: break-all;
+        }
+        .footer-links a {
+            margin: 0 5px;
+        }
+        .mdui-card {
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .app-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card-header-icon {
+            color: #fff;
+            background: linear-gradient(45deg, #2196F3, #00BCD4);
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1e21 0%, #0d1117 100%);
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+    <!-- 顶部标题区域 -->
+    <div class="header">
+        <a href="https://github.com/Geekertao/CF-Workers-GitHub-Proxy" target="_blank" class="github-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="90" viewBox="0 0 98 96" fill="#ffffff">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+            </svg>
+        </a>
+        <h1 class="mdui-typo-display-1">GitHub文件及API加速</h1>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="app-container">
+        <!-- 搜索表单卡片 -->
+        <div class="mdui-card mdui-hoverable">
+            <div class="mdui-card-header">
+                <div class="mdui-card-header-avatar">
+                    <i class="mdui-icon material-icons card-header-icon">search</i>
+                </div>
+                <div class="mdui-card-header-title">GitHub链接加速</div>
+                <div class="mdui-card-header-subtitle">输入GitHub文件或API链接进行加速</div>
+            </div>
+            <div class="mdui-card-content">
+                <form onsubmit="toSubmit(event)">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">请输入GitHub文件或API链接</label>
+                        <input 
+                            class="mdui-textfield-input" 
+                            type="text" 
+                            name="q" 
+                            pattern="^((https|http)://)?(github.com/.+?/.+?/(?:releases|archive|blob|raw|suites)|((?:raw|gist|api).(?:githubusercontent|github).com))/.+$" 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-btn-block">
+                        <i class="mdui-icon material-icons">arrow_forward</i> 加速访问
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 提示信息卡片 -->
+        <div class="mdui-card mdui-hoverable">
+            <div class="mdui-card-header">
+                <div class="mdui-card-header-avatar">
+                    <i class="mdui-icon material-icons card-header-icon">info</i>
+                </div>
+                <div class="mdui-card-header-title">使用说明</div>
+            </div>
+            <div class="mdui-card-content">
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">cloud_queue</i></span>
+                    <span class="mdui-chip-title">支持带协议头(https://)或不带的GitHub链接</span>
+                </div>
+                <div class="mdui-chip mdui-m-t-1">
+                    <span class="mdui-chip-icon mdui-color-green"><i class="mdui-icon material-icons">call_to_action</i></span>
+                    <span class="mdui-chip-title">release、archive使用CF加速，文件会跳转至JsDelivr</span>
+                </div>
+                <div class="mdui-chip mdui-m-t-1">
+                    <span class="mdui-chip-icon mdui-color-orange"><i class="mdui-icon material-icons">warning</i></span>
+                    <span class="mdui-chip-title">注意：暂不支持文件夹下载</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 示例区域卡片 -->
+        <div class="mdui-card mdui-hoverable">
+            <div class="mdui-card-header">
+                <div class="mdui-card-header-avatar">
+                    <i class="mdui-icon material-icons card-header-icon">description</i>
+                </div>
+                <div class="mdui-card-header-title">合法输入示例</div>
+            </div>
+            <div class="mdui-card-content">
+                <div class="example-item">📄 分支源码：https://github.com/hunshcn/project/archive/master.zip</div>
+                <div class="example-item">📁 release源码：https://github.com/hunshcn/project/archive/v0.1.0.tar.gz</div>
+                <div class="example-item">📂 release文件：https://github.com/hunshcn/project/releases/download/v0.1.0/example.zip</div>
+                <div class="example-item">💾 commit文件：https://github.com/hunshcn/project/blob/123/filename</div>
+                <div class="example-item">🖨️ gist：https://gist.githubusercontent.com/cielpy/123/raw/cmd.py</div>
+                <div class="example-item">☁️ api： https://api.github.com/repos/Geekertao/CF-Workers-GitHub-Proxy</div>
+            </div>
+        </div>
+
+        <!-- 页脚卡片 -->
+        <div class="mdui-card">
+            <div class="mdui-card-content mdui-text-center">
+                <p class="footer-links">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" class="mdui-text-color-theme">陇ICP备2025022782号-2</a> 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用国内CDN加载MDUI JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/js/mdui.min.js"></script>
+    <script>
+        // 提交表单函数
+        function toSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementsByName('q')[0];
+            const baseUrl = location.href.substr(0, location.href.lastIndexOf('/') + 1);
+            window.open(baseUrl + input.value);
+        }
+        
+        // 初始化MDUI组件
+        document.addEventListener('DOMContentLoaded', function() {
+            new mdui.Tooltip('.mdui-tooltip');
+        });
+    </script>
+</body>
+</html>
